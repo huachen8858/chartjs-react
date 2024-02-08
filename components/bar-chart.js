@@ -1,6 +1,15 @@
 import React from "react";
+import {Chart as ChartJS, defaults} from "chart.js/auto"
 import { Bar } from "react-chartjs-2";
 import sourceData from "../data/sourceData.json";
+
+defaults.maintainAspectRatio = false;
+defaults.responsive = true;
+
+defaults.plugins.title.display = true;
+defaults.plugins.title.align = "center";
+defaults.plugins.title.font.size = 20;
+defaults.plugins.title.color = "#333";
 
 export default function BarChart() {
   return (
@@ -20,6 +29,13 @@ export default function BarChart() {
           },
         ],
       }}
+      options={{
+            plugins: {
+              title: {
+                text: "Revenue Source",
+              },
+            },
+          }}
     />
   );
 }

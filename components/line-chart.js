@@ -1,6 +1,15 @@
 import React from "react";
+import {Chart as ChartJS, defaults} from "chart.js/auto"
 import { Line } from "react-chartjs-2";
 import revenueData from "../data/revenueData.json";
+
+defaults.maintainAspectRatio = false;
+defaults.responsive = true;
+
+defaults.plugins.title.display = true;
+defaults.plugins.title.align = "center";
+defaults.plugins.title.font.size = 20;
+defaults.plugins.title.color = "#333";
 
 export default function LineChart() {
   return (
@@ -22,6 +31,18 @@ export default function LineChart() {
           },
         ],
       }}
+      options={{
+            elements: {
+              line: {
+                tension: 0.5,
+              },
+            },
+            plugins: {
+              title: {
+                text: "Monthly Revenue & Cost",
+              },
+            },
+          }}
     />
   );
 }
