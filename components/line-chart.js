@@ -1,6 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
-import revenueData from "../src/data/revenueData.json";
+import revenueData from "../data/revenueData.json";
 
 export default function LineChart() {
   return (
@@ -11,14 +11,14 @@ export default function LineChart() {
           {
             label: "Revenue",
             data: revenueData.map((data) => data.revenue),
-            backgroundColor: "#064FF0",
-            borderColor: "#064FF0"
+            backgroundColor: "#2884E6",
+            borderColor: "#2884E6"
           },
           {
             label: "Cost",
             data: revenueData.map((data) => data.cost),
-            backgroundColor: "#FF3030",
-            borderColor: "#FF3030"
+            backgroundColor: "#FD766A",
+            borderColor: "#FD766A"
           },
         ],
       }}
